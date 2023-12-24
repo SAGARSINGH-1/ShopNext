@@ -12,9 +12,9 @@ function Header() {
       </div>
       <div className="flex flex-wrap items-center gap-x-4 gap-y-2">
         <p className="text-sm leading-6 text-gray-900">
-          <strong className="font-semibold"><span className='bg-black text-white p-2 rounded-full cursor-pointer'><a target='_blank' href='https://github.com/SAGARSINGH-1'>SAGARSINGH-1</a></span>   2023</strong><svg viewBox="0 0 2 2" className="mx-2 inline h-0.5 w-0.5 fill-current" aria-hidden="true"><circle cx="1" cy="1" r="1" /></svg>Shop as thinking like shoping once but come again.
+          <strong className="font-semibold"><span className='bg-black text-white p-2 rounded-full cursor-pointer'><Link target='_blank' to={'https://github.com/SAGARSINGH-1'}>SAGARSINGH-1</Link></span>   2023</strong><svg viewBox="0 0 2 2" className="mx-2 inline h-0.5 w-0.5 fill-current" aria-hidden="true"><circle cx="1" cy="1" r="1" /></svg>Shop as thinking like shoping once but come again.
         </p>
-        <a href="/login" className="flex-none rounded-full bg-gray-900 px-3.5 py-1 text-sm font-semibold text-white shadow-sm hover:bg-gray-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gray-900">Register now <span aria-hidden="true">&rarr;</span></a>
+        <Link to={"/login"} className="flex-none rounded-full bg-gray-900 px-3.5 py-1 text-sm font-semibold text-white shadow-sm hover:bg-gray-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gray-900">Register now <span aria-hidden="true">&rarr;</span></Link>
       </div>
       <div className="flex flex-1 justify-end">
         <Link target='_blank' >
