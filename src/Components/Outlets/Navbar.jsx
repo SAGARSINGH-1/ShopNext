@@ -12,7 +12,7 @@ function Navbar() {
             <div className='flex items-center gap-10'>
                 <div>
                     <Link to={"/"}>
-                    <img src="https://static.vecteezy.com/system/resources/previews/000/616/943/original/vector-shopping-bag-icon.jpg" alt="" width={"50px"} /></Link>
+                    <img src="https://static.vecteezy.com/system/resources/previews/000/616/943/original/vector-shopping-bag-icon.jpg" alt="logo" width={"50px"} /></Link>
                 </div>
                 <ul className='flex gap-6 font-medium cursor-pointer'>
                     <li className=''>Dashboard</li>

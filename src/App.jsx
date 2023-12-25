@@ -1,8 +1,7 @@
 import { useState } from 'react'
-import Navbar from './Components/Layout/Navbar'
-import Header from './Components/Layout/Header'
-import Footer from './Components/Layout/Footer'
-import Main from './Components/pages/Hero'
+import Navbar from './Components/Outlets/Navbar'
+import Header from './Components/Outlets/Header'
+import Footer from './Components/Outlets/Footer'
 import { Outlet } from 'react-router-dom'
 
 function App() {
