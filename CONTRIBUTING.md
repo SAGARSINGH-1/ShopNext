@@ -8,18 +8,18 @@ The following is a set of guidelines for contributing to the E-commerce Shopping
 
 ### Reporting Bugs
 
-- Before creating a bug report, please check if the issue is already reported by searching the [issue tracker](link-to-your-issue-tracker).
-- If you can't find an existing issue, open a [new issue](link-to-new-issue) and provide a detailed description of the problem. Include steps to reproduce the bug.
+- Before creating a bug report, please check if the issue is already reported by searching the issue tracker.
+- If you can't find an existing issue, open a new issue and provide a detailed description of the problem. Include steps to reproduce the bug.
 
 ### Suggesting Enhancements
 
-- Before creating an enhancement suggestion, please check if it's already suggested by searching the [issue tracker](link-to-your-issue-tracker).
-- If you can't find an existing suggestion, open a [new suggestion](link-to-new-suggestion) and provide a detailed description of your proposed enhancement.
+- Before creating an enhancement suggestion, please check if it's already suggested by searching the issue tracker.
+- If you can't find an existing suggestion, open a new suggestion and provide a detailed description of your proposed enhancement.
 
 ### Pull Requests
 
 - If you want to contribute code, please fork the repository and create a new branch for your feature or bug fix.
-- Make your changes in the new branch and submit a [pull request](link-to-pull-requests) with a detailed description of your changes.
+- Make your changes in the new branch and submit a pull request) with a detailed description of your changes.
 - Ensure that your code follows the project's coding standards and conventions.
 
 ## Development Setup
@@ -28,7 +28,7 @@ If you'd like to set up the project for development, follow the steps in the [RE
 
 ## Code of Conduct
 
-Please note that this project is released with a [Contributor Code of Conduct](link-to-code-of-conduct). By participating in this project, you agree to abide by its terms.
+Please note that this project is released with a [Contributor Code of Conduct. By participating in this project, you agree to abide by its terms.
 
 ## Acknowledgments
 
