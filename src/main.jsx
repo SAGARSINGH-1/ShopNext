@@ -6,6 +6,10 @@ import Login from './Components/pages/registration/Login.jsx'
 import Main from './Components/pages/Hero.jsx'
 import { Route, RouterProvider, createBrowserRouter, createRoutesFromElements } from 'react-router-dom';
 import Error from './Components/pages/Error.jsx'
+import Home from './Components/pages/Home.jsx'
+import Product from './Components/pages/Product.jsx'
+import { Provider } from 'react-redux';
+import store from './Components/Store/store';
 
 const router = createBrowserRouter([
   {
@@ -21,6 +25,14 @@ const router = createBrowserRouter([
         element: <Main />
       },
       {
+        path: "/home",
+        element: <Home />
+      },
+      {
+        path: "/product/:id",
+        element: <Product />
+      },
+      {
         path: "*",
         element: <Error />
       },
@@ -31,6 +43,8 @@ const router = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <RouterProvider router={router} />
+    <Provider store={store}>
+      <RouterProvider router={router} />
+    </Provider>
   </React.StrictMode>,
 )
