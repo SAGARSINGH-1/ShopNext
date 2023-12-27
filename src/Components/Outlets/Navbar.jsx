@@ -12,19 +12,19 @@ function Navbar() {
             <div className='flex items-center gap-10'>
                 <div>
                     <Link to={"/"}>
-                    <img src="https://static.vecteezy.com/system/resources/previews/000/616/943/original/vector-shopping-bag-icon.jpg" alt="logo" width={"50px"} /></Link>
+                        <img src="https://static.vecteezy.com/system/resources/previews/000/616/943/original/vector-shopping-bag-icon.jpg" alt="logo" width={"50px"} /></Link>
                 </div>
                 <ul className='flex gap-6 font-medium cursor-pointer'>
-                    <li className=''>Dashboard</li>
-                    <li className=''>Trending</li>
-                    <li className=''>Men</li>
-                    <li className=''>Female</li>
-                    <li className=''>Child</li>
+                    <Link to={"/home"}><li className=''>Dashboard</li></Link>
+                    <Link to={"/home"}><li className=''>Trending</li></Link>
+                    <Link to={"/mens"}><li className=''>Men</li></Link>
+                    <Link to={"/women"}><li className=''>Female</li></Link>
+                    <Link to={"/child"}><li className=''>Child</li></Link>
                 </ul>
             </div>
             <div className='flex gap-6 items-center cursor-pointer'>
                 <IoNotificationsCircleOutline className='mt-1 text-3xl text-gray-500' />
-                <TfiShoppingCartFull className="mt-1 text-3xl"/>
+                <TfiShoppingCartFull className="mt-1 text-3xl" />
                 <FaRegUserCircle onClick={moved} className='mt-1 text-4xl' />
             </div>
         </nav>

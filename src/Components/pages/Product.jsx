@@ -6,8 +6,7 @@ function Product() {
     const products = useSelector((state) => state.product.products); // Corrected the path to products
     const { id } = useParams();
 
-    console.log(products);
-    const selectedProduct = products?products.find((product) => product.id === id):null;
+    const selectedProduct = products?products.find((product) => product.id == id):null;
     if (!selectedProduct) {
         // Handle the case where the product is not found
         return <div>Product not found!</div>;
