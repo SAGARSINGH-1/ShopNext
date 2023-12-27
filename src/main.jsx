@@ -9,7 +9,7 @@ import Error from './Components/pages/Error.jsx'
 import Home from './Components/pages/Home.jsx'
 import Product from './Components/pages/Product.jsx'
 import { Provider } from 'react-redux';
-import store from './Components/Store/store';
+import store from './Components/Store/Store';
 
 const router = createBrowserRouter([
   {
