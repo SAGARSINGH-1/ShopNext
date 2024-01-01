@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from "react-redux";
 import { storeProducts } from '../Store/productSlice';
+import FilterBar from '../Outlets/FilterBar';
 
 function Home() {
     const [products, setProducts] = useState([]);
@@ -32,7 +33,7 @@ function Home() {
                     <div className="mx-auto max-w-2xl px-4 py-16 sm:px-6 sm:py-24 lg:max-w-7xl lg:px-8">
 
                         <div>
-                            filterbar
+                           <FilterBar  />
                         </div>
 
                         <div className="mt-6 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-3 xl:gap-x-11">

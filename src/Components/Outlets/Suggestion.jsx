@@ -21,7 +21,8 @@ function Suggestion(props) {
             .catch((error) => {
                 console.error('Error fetching products:', error);
             });
-    }, [])
+    }, []);
+
     return (
         <>
             <Slide className="">
@@ -57,7 +58,6 @@ function Suggestion(props) {
                     })
                 }
             </Slide>
-            <h1 className='mb-10'></h1>
         </>
     )
 }
