@@ -3,14 +3,14 @@ import { Link } from 'react-router-dom'
 
 function Login() {
     return (
-        <>
-            <div className='py-24'>
-                <div className="sm:mx-auto sm:w-full sm:max-w-sm">
+        <div className='pt-7 mx-4'>
+            <div className='pb-24 pt-6 px-12 border md:border-0 md:shadow-none shadow-2xl'>
+                <div className="mx-auto w-full md:max-w-sm">
                     <img className="mx-auto h-10 w-auto" src="https://static.vecteezy.com/system/resources/previews/000/616/943/original/vector-shopping-bag-icon.jpg" alt="Your Company"/>
                         <h2 className="mt-10 text-center text-2xl font-bold leading-9 tracking-tight text-gray-900">Sign in to your account</h2>
                 </div>
 
-                <div className="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
+                <div className="mt-10 mx-auto w-full max-w-sm">
                     <form className="space-y-6" action="#" method="POST">
                         <div>
                             <label for="email" className="block text-sm font-medium leading-6 text-gray-900">Email address</label>
@@ -42,7 +42,7 @@ function Login() {
                     </p>
                 </div>
             </div>
-        </>
+        </div>
     )
 }
 

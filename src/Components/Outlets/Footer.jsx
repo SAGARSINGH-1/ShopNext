@@ -46,12 +46,12 @@ function Footer() {
 
             <div className='flex flex-col px-10 gap-y-10 py-10 bg-gray-100'>
             <Link to={"/"}>
-            <div className='flex gap-2'>
+            <div className='flex flex-wrap gap-2'>
                             <img className="h-12" src="https://static.vecteezy.com/system/resources/previews/000/616/943/original/vector-shopping-bag-icon.jpg" alt="" /><span className='text-xl font-bold mt-2'>ShopNext</span>
                         </div></Link>
-                <ul className="flex justify-between gap-x-10">
-                    <li>
-                        <h3 className="text-lg font-bold">Solutions</h3>
+                <ul className="flex flex-wrap justify-between">
+                    <li className='w-[100vw] md:w-auto'>
+                        <h3 className="text-lg font-bold md:mt-0  mt-4">Solutions</h3>
                         <ul className="text-gray-700 font-medium mt-4 space-y-2 cursor-pointer">
                             <li>Marketing</li>
                             <li>Analytics</li>
@@ -59,8 +59,8 @@ function Footer() {
                             <li>Insights</li>
                         </ul>
                     </li>
-                    <li>
-                        <h3 className="text-lg font-bold">Support</h3>
+                    <li className='w-[100vw] md:w-auto'>
+                        <h3 className="text-lg font-bold md:mt-0  mt-4">Support</h3>
                         <ul className="text-gray-700 font-medium mt-4 space-y-2 cursor-pointer">
                             <li>Pricing</li>
                             <li>Need Help</li>
@@ -68,8 +68,8 @@ function Footer() {
                             <li>API Satus</li>
                         </ul>
                     </li>
-                    <li>
-                        <h3 className="text-lg font-bold">Company</h3>
+                    <li className='w-[100vw] md:w-auto'>
+                        <h3 className="text-lg font-bold md:mt-0  mt-4">Company</h3>
                         <ul className="text-gray-700 font-medium mt-4 space-y-2 cursor-pointer">
                             <li>About</li>
                             <li>Tutorials</li>
@@ -79,8 +79,8 @@ function Footer() {
                             <li>Parterns</li>
                         </ul>
                     </li>
-                    <li>
-                        <h3 className="text-lg font-bold">Legal</h3>
+                    <li className='w-[100vw] md:w-auto'>
+                        <h3 className="text-lg font-bold md:mt-0  mt-4">Legal</h3>
                         <ul className="text-gray-700 font-medium mt-4 space-y-2 cursor-pointer mr-48">
                             <li>Terms of Service</li>
                             <li>Privacy Policy</li>

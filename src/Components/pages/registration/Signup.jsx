@@ -43,8 +43,8 @@ function Signup() {
     }
 
     return (
-        <>
-            <div className="py-24">
+        <div className='pt-7 mx-4'>
+            <div className="pb-24 pt-6 px-12 border md:border-0 md:shadow-none shadow-2xl">
                 <div className="sm:mx-auto sm:w-full sm:max-w-sm">
                     <img
                         className="mx-auto h-10 w-auto"
@@ -134,7 +134,7 @@ function Signup() {
                     </p>
                 </div>
             </div>
-        </>
+        </div>
     );
 }
 
