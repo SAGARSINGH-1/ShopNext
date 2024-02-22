@@ -18,7 +18,6 @@ function Home() {
             })
             .then((result) => {
                 setProducts(result.products);
-                console.log(result);
                 dispatch(storeProducts(result.products));
             })
             .catch((error) => {

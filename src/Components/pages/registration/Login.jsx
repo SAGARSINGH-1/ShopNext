@@ -1,7 +1,24 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import { useDispatch } from 'react-redux'
+import { login } from '../../Store/authSlice'; // Update with the correct path to your login action
+import authService from '../../../appwrite/auth';
 
 function Login() {
+    const dispatch = useDispatch();
+    
+    function handleSubmit(event) {
+        event.preventDefault();
+        const data = new FormData(event.target);
+        const email = data.get('email');
+        const password = data.get('password');
+        
+        authService.login({ email, password }).then((response) => {
+            if (response) {
+                dispatch(login(response));
+            }
+        })
+    }
     return (
         <div className='pt-7 mx-4'>
             <div className='pb-24 pt-6 px-12 border md:border-0 md:shadow-none shadow-2xl'>
@@ -11,9 +28,9 @@ function Login() {
                 </div>
 
                 <div className="mt-10 mx-auto w-full max-w-sm">
-                    <form className="space-y-6" action="#" method="POST">
+                    <form className="space-y-6" onSubmit={handleSubmit}>
                         <div>
-                            <label for="email" className="block text-sm font-medium leading-6 text-gray-900">Email address</label>
+                            <label htmlFor="email" className="block text-sm font-medium leading-6 text-gray-900">Email address</label>
                             <div className="mt-2">
                                 <input id="email" name="email" type="email" autoComplete="email" required className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"/>
                             </div>
@@ -21,7 +38,7 @@ function Login() {
 
                         <div>
                             <div className="flex items-center justify-between">
-                                <label for="password" className="block text-sm font-medium leading-6 text-gray-900">Password</label>
+                                <label htmlFor="password" className="block text-sm font-medium leading-6 text-gray-900">Password</label>
                                 <div className="text-sm">
                                     <Link to={"#"} className="font-semibold text-indigo-600 hover:text-indigo-500">Forgot password?</Link>
                                 </div>

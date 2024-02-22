@@ -3,18 +3,24 @@ import Navbar from './Components/Outlets/Navbar'
 import Header from './Components/Outlets/Header'
 import Footer from './Components/Outlets/Footer'
 import { Outlet } from 'react-router-dom'
+import { Toaster } from 'react-hot-toast'
 
 function App() {
 
   return (
     <div className=''>
-      <Header/>
-      <Navbar/>
+      <Header />
+      <Navbar />
       <div className='min-h-screen'>
-      <Outlet/>
+        <Outlet />
       </div>
-      <Footer/>
+      <Footer />
+      <Toaster
+        position="top-center"
+        reverseOrder={false}
+      />
     </div>
+
   )
 }
 

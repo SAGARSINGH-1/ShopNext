@@ -1,10 +1,15 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { IoNotificationsCircleOutline } from 'react-icons/io5'
 import { FaRegUserCircle } from "react-icons/fa";
 import { TfiShoppingCartFull } from "react-icons/tfi";
 import { Link } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 
 function Navbar() {
+    const user = useSelector(state => state.auth.userData)
+    useEffect(() => {
+        console.log(user);
+    },[user])
     function moved() {
     }
     return (
