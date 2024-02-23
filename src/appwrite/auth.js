@@ -45,7 +45,7 @@ export class AuthService {
                 return response;
             }
         } catch (error) {
-            toast.error(error.message)
+            console.log("User Not registered")
         }
     }
 
@@ -60,6 +60,19 @@ export class AuthService {
             toast.error(error.message)
         }
     
+    }
+
+    async logout(){
+        try{
+            const response = await this.account.deleteSession('current');
+            if(response){
+                this.notify("Logout successful")
+                return response;
+            }
+        }
+        catch(error){
+            toast.error(error.message)
+        }
     }
 }
 

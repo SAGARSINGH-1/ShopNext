@@ -3,19 +3,21 @@ import { Link } from 'react-router-dom'
 import { useDispatch } from 'react-redux'
 import { login } from '../../Store/authSlice'; // Update with the correct path to your login action
 import authService from '../../../appwrite/auth';
+import { useNavigate } from 'react-router-dom';
 
 function Login() {
     const dispatch = useDispatch();
-    
+    const Navigate = useNavigate();
     function handleSubmit(event) {
         event.preventDefault();
         const data = new FormData(event.target);
         const email = data.get('email');
         const password = data.get('password');
-        
+
         authService.login({ email, password }).then((response) => {
             if (response) {
                 dispatch(login(response));
+                Navigate('/profile/' + response.name);
             }
         })
     }
@@ -23,8 +25,8 @@ function Login() {
         <div className='pt-7 mx-4'>
             <div className='pb-24 pt-6 px-12 border md:border-0 md:shadow-none shadow-2xl'>
                 <div className="mx-auto w-full md:max-w-sm">
-                    <img className="mx-auto h-10 w-auto" src="https://static.vecteezy.com/system/resources/previews/000/616/943/original/vector-shopping-bag-icon.jpg" alt="Your Company"/>
-                        <h2 className="mt-10 text-center text-2xl font-bold leading-9 tracking-tight text-gray-900">Sign in to your account</h2>
+                    <img className="mx-auto h-10 w-auto" src="https://static.vecteezy.com/system/resources/previews/000/616/943/original/vector-shopping-bag-icon.jpg" alt="Your Company" />
+                    <h2 className="mt-10 text-center text-2xl font-bold leading-9 tracking-tight text-gray-900">Sign in to your account</h2>
                 </div>
 
                 <div className="mt-10 mx-auto w-full max-w-sm">
@@ -32,7 +34,7 @@ function Login() {
                         <div>
                             <label htmlFor="email" className="block text-sm font-medium leading-6 text-gray-900">Email address</label>
                             <div className="mt-2">
-                                <input id="email" name="email" type="email" autoComplete="email" required className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"/>
+                                <input id="email" name="email" type="email" autoComplete="email" required className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" />
                             </div>
                         </div>
 
@@ -44,7 +46,7 @@ function Login() {
                                 </div>
                             </div>
                             <div className="mt-2">
-                                <input id="password" name="password" type="password" autoComplete="current-password" required className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"/>
+                                <input id="password" name="password" type="password" autoComplete="current-password" required className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" />
                             </div>
                         </div>
 
@@ -55,7 +57,7 @@ function Login() {
 
                     <p className="mt-10 text-center text-sm text-gray-500">
                         Not a member?
-                        <Link to={"/signup"} className="font-semibold leading-6 text-indigo-600 hover:text-indigo-500">Start a 14 day free trial</Link>
+                        <Link to={"/signup"} className="font-semibold leading-6 text-indigo-600 hover:text-indigo-500">register now</Link>
                     </p>
                 </div>
             </div>
