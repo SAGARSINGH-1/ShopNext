@@ -3,7 +3,7 @@ import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
   status: false,
-  products: null, // Corrected from userData to products
+  products: {}, // Corrected from userData to products
 };
 
 const productSlice = createSlice({

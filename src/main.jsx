@@ -44,6 +44,10 @@ const router = createBrowserRouter([
         element: <Account />
       },
       {
+        path: "/account",
+        element: <Account />
+      },
+      {
         path: "/account/your_orders",
         element: <Orders />
       },
