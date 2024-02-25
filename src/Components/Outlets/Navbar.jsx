@@ -79,7 +79,16 @@ function Navbar() {
                 </div>
 
 
-                <TfiShoppingCartFull className="mt-1 ml-3 text-3xl" />
+                <div className="dropdown dropdown-end">
+                    <div tabIndex={0} role="button" className="btn btn-ghost rounded-btn">{<p className='font-bold '><TfiShoppingCartFull className="mt-1 ml-3 text-3xl" /></p>}</div>
+                    <div tabIndex={0} className="menu dropdown-content z-[1] p-2 shadow bg-gray-200 text-black rounded-box w-44 mt-4 font-bold">
+                        <span className="font-bold text-lg">8 Items</span>
+                        <span className="text-indigo-500">Subtotal: $999</span>
+                        <div className="card-actions">
+                            <Link to={'/cart'} className="btn btn-primary btn-block">View cart</Link>
+                        </div>
+                    </div>
+                </div>
 
                 {user ? (<div className="dropdown dropdown-end">
                     <div tabIndex={0} role="button" className="btn btn-ghost rounded-btn">{<p className='font-bold '>Hey, <span className='text-indigo-500 text-lg'>{user.name}</span></p>}</div>

@@ -28,6 +28,94 @@ function Orders() {
             qty: 1
         },
         {
+            id: "1",
+            imgUrl: "https://rukminim2.flixcart.com/image/xif0q/t-shirt/u/u/e/m-oversizetsrt-101-kajaru-original-imagwgndydxe48zs.jpeg",
+            title: "Men Printed Round Neck Poly Cotton Black T-Shirt",
+            color: "black",
+            status: "On the way",
+            size: "M",
+            price: 100,
+            rating: 5,
+            qty: 1
+        },
+        {
+            id: "1",
+            imgUrl: "https://rukminim2.flixcart.com/image/xif0q/t-shirt/u/u/e/m-oversizetsrt-101-kajaru-original-imagwgndydxe48zs.jpeg",
+            title: "Men Printed Round Neck Poly Cotton Black T-Shirt",
+            color: "black",
+            status: "On the way",
+            size: "M",
+            price: 100,
+            rating: 5,
+            qty: 1
+        },
+        {
+            id: "1",
+            imgUrl: "https://rukminim2.flixcart.com/image/xif0q/t-shirt/u/u/e/m-oversizetsrt-101-kajaru-original-imagwgndydxe48zs.jpeg",
+            title: "Men Printed Round Neck Poly Cotton Black T-Shirt",
+            color: "black",
+            status: "On the way",
+            size: "M",
+            price: 100,
+            rating: 5,
+            qty: 1
+        },
+        {
+            id: "1",
+            imgUrl: "https://rukminim2.flixcart.com/image/xif0q/t-shirt/u/u/e/m-oversizetsrt-101-kajaru-original-imagwgndydxe48zs.jpeg",
+            title: "Men Printed Round Neck Poly Cotton Black T-Shirt",
+            color: "black",
+            status: "On the way",
+            size: "M",
+            price: 100,
+            rating: 5,
+            qty: 1
+        },
+        {
+            id: "1",
+            imgUrl: "https://rukminim2.flixcart.com/image/xif0q/t-shirt/u/u/e/m-oversizetsrt-101-kajaru-original-imagwgndydxe48zs.jpeg",
+            title: "Men Printed Round Neck Poly Cotton Black T-Shirt",
+            color: "black",
+            status: "On the way",
+            size: "M",
+            price: 100,
+            rating: 5,
+            qty: 1
+        },
+        {
+            id: "1",
+            imgUrl: "https://rukminim2.flixcart.com/image/xif0q/t-shirt/u/u/e/m-oversizetsrt-101-kajaru-original-imagwgndydxe48zs.jpeg",
+            title: "Men Printed Round Neck Poly Cotton Black T-Shirt",
+            color: "black",
+            status: "On the way",
+            size: "M",
+            price: 100,
+            rating: 5,
+            qty: 1
+        },
+        {
+            id: "1",
+            imgUrl: "https://rukminim2.flixcart.com/image/xif0q/t-shirt/u/u/e/m-oversizetsrt-101-kajaru-original-imagwgndydxe48zs.jpeg",
+            title: "Men Printed Round Neck Poly Cotton Black T-Shirt",
+            color: "black",
+            status: "On the way",
+            size: "M",
+            price: 100,
+            rating: 5,
+            qty: 1
+        },
+        {
+            id: "1",
+            imgUrl: "https://rukminim2.flixcart.com/image/xif0q/t-shirt/u/u/e/m-oversizetsrt-101-kajaru-original-imagwgndydxe48zs.jpeg",
+            title: "Men Printed Round Neck Poly Cotton Black T-Shirt",
+            color: "black",
+            status: "On the way",
+            size: "M",
+            price: 100,
+            rating: 5,
+            qty: 1
+        },
+        {
             id: '2',
             imgUrl: "https://rukminim2.flixcart.com/image/xif0q/t-shirt/u/u/e/m-oversizetsrt-101-kajaru-original-imagwgndydxe48zs.jpeg",
             title: "Men Printed Round Neck Poly Cotton Black T-Shirt",
@@ -37,6 +125,39 @@ function Orders() {
             price: 200,
             rating: 4,
             qty: 2
+        },
+        {
+            id: '3',
+            imgUrl: "https://rukminim2.flixcart.com/image/xif0q/t-shirt/u/u/e/m-oversizetsrt-101-kajaru-original-imagwgndydxe48zs.jpeg",
+            title: "Men Printed Round Neck Poly Cotton Black T-Shirt",
+            color: "black",
+            status: "On the way",
+            size: "M",
+            price: 300,
+            rating: 3,
+            qty: 3
+        },
+        {
+            id: '3',
+            imgUrl: "https://rukminim2.flixcart.com/image/xif0q/t-shirt/u/u/e/m-oversizetsrt-101-kajaru-original-imagwgndydxe48zs.jpeg",
+            title: "Men Printed Round Neck Poly Cotton Black T-Shirt",
+            color: "black",
+            status: "On the way",
+            size: "M",
+            price: 300,
+            rating: 3,
+            qty: 3
+        },
+        {
+            id: '3',
+            imgUrl: "https://rukminim2.flixcart.com/image/xif0q/t-shirt/u/u/e/m-oversizetsrt-101-kajaru-original-imagwgndydxe48zs.jpeg",
+            title: "Men Printed Round Neck Poly Cotton Black T-Shirt",
+            color: "black",
+            status: "On the way",
+            size: "M",
+            price: 300,
+            rating: 3,
+            qty: 3
         },
         {
             id: '3',
@@ -112,7 +233,7 @@ function Orders() {
                         </Link>
                     </li>
                     <li>
-                        <Link className='gap-1' to={'/account/your_order'}>
+                        <Link className='gap-1' to={'/account/your_orders'}>
                             <GiCardboardBoxClosed className='mt-1 text-lg' />
                             Your Orders
                         </Link>
@@ -121,7 +242,7 @@ function Orders() {
             </div>
 
             <div className='flex gap-5'>
-                <div className='left px-[16px] w-[250px] bg-white shadow-md'>
+                <div className='h-[86vh] px-[16px] w-[250px] bg-white shadow-md'>
                     <p className='px-[5px] py-[11px] font-bold text-xl'>Filters</p>
                     <p className='pb-[8px] font-semibold'>Order Status</p>
                     {
