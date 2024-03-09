@@ -8,9 +8,8 @@ import authService from '../../appwrite/auth';
 import { login } from '../Store/authSlice';
 import { useNavigate } from 'react-router-dom';
 
+
 function Navbar() {
-
-
     const notificationMessages = [
         "Woohoo! 🎉 Your order #1523 has been confirmed...",
         "Exclusive offer just for you! Use code... 🎁",
@@ -21,15 +20,29 @@ function Navbar() {
         "Celebrate your 1-year anniversary... 🎉",
     ];
 
-    const user = useSelector(state => state.auth.userData)
+    const user = useSelector((state) => state.auth.userData);
+    const Items = useSelector((state) => state.cart.products);
     const dispatch = useDispatch();
-    const Navigate = useNavigate();
+    const navigate = useNavigate();
+    const [cartItems, setCartItems] = React.useState([]);
 
     useEffect(() => {
         authService.getAccount().then((res) => {
             dispatch(login(res));
-        })
-    }, [user])
+        });
+    }, [user]);
+
+    useEffect(() => {
+        setCartItems(Items);
+    }, [Items]);
+
+
+    function logoutHandler() {
+        authService.logout().then((res) => {
+            dispatch(login(null));
+            navigate('/login');
+        });
+    }
 
 
 
@@ -80,10 +93,14 @@ function Navbar() {
 
 
                 <div className="dropdown dropdown-end">
+                    <div className="badge border-none absolute right-[3px]">{cartItems.length}</div>
                     <div tabIndex={0} role="button" className="btn btn-ghost rounded-btn">{<p className='font-bold '><TfiShoppingCartFull className="mt-1 ml-3 text-3xl" /></p>}</div>
                     <div tabIndex={0} className="menu dropdown-content z-[1] p-2 shadow bg-gray-200 text-black rounded-box w-44 mt-4 font-bold">
-                        <span className="font-bold text-lg">8 Items</span>
-                        <span className="text-indigo-500">Subtotal: $999</span>
+                        <span className="font-bold text-lg">{cartItems.length} items</span>
+                        <span className="text-indigo-500">₹
+                            {cartItems.reduce((total, item) => total + (item.price * item.quantity), 0)}
+                        </span>
+
                         <div className="card-actions">
                             <Link to={'/cart'} className="btn btn-primary btn-block">View cart</Link>
                         </div>

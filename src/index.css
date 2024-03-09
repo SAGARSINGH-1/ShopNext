@@ -3,9 +3,24 @@
 @tailwind utilities;
 
 
-input{
+input {
     background-color: white;
     color: black;
     padding-left: 2px;
     font: bold;
+}
+
+.border-red {
+    border-color: red;
+}
+
+
+@layer utilities {
+    .scrollbar {
+        scrollbar-width: none;
+    }
+}
+
+.card-compact {
+    @apply scrollbar;
 }

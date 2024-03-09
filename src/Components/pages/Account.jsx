@@ -32,7 +32,7 @@ function Account() {
         },
         {
             imgUrl: 'https://m.media-amazon.com/images/G/31/x-locale/cs/ya/images/amazon_pay._CB485946857_.png',
-            heading: 'Amazon Pay balance',
+            heading: 'Balance in Your Wallet',
             text: 'Add money to your balance'
         },
         {
