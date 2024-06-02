@@ -25,15 +25,23 @@ function Navbar() {
     const dispatch = useDispatch();
     const navigate = useNavigate();
     const [cartItems, setCartItems] = React.useState([]);
-
-    useEffect(() => {
+    const [loader, setLoader] = React.useState(false);
+    function getUser() {
+        setLoader(true);
         authService.getAccount().then((res) => {
             dispatch(login(res));
-        });
-    }, [user]);
+            console.log("gee");
+            setLoader(false);
+        })
+    };
+
+    useEffect(() => {
+        getUser();
+    }, []);
 
     useEffect(() => {
         setCartItems(Items);
+        console.log("gee2");
     }, [Items]);
 
 
@@ -108,12 +116,12 @@ function Navbar() {
                 </div>
 
                 {user ? (<div className="dropdown dropdown-end">
-                    <div tabIndex={0} role="button" className="btn btn-ghost rounded-btn">{<p className='font-bold '>Hey, <span className='text-indigo-500 text-lg'>{user.name}</span></p>}</div>
+                    <div tabIndex={0} role="button" className="btn btn-ghost rounded-btn">{<p className='font-bold '>Hey, <span className='text-indigo-500 text-lg'>{user.name ? user.name : "Username12"}</span></p>}</div>
                     <ul tabIndex={0} className="menu dropdown-content z-[1] p-2 shadow bg-base-100 rounded-box w-44 mt-4 font-bold text-white">
                         <li><Link to={`account/${user.name}`}>Account</Link></li>
                         <li onClick={logoutHandler}><Link className='bg-indigo-500 hover:bg-indigo-600 rounded-xl'>Logout</Link></li>
                     </ul>
-                </div>) : (<Link to={'/login'}><FaRegUserCircle className='mt-1 text-4xl' /></Link>)}
+                </div>) : (<Link to={'/login'}><FaRegUserCircle className='mt-1 text-4xl inline mr-3' /><p className='font-bold inline'>Hey, <span className='text-indigo-500 text-lg'>Login here</span></p></Link>)}
             </div>
         </nav >
     )
