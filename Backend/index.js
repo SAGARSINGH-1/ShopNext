@@ -1,9 +1,14 @@
 const express = require("express")
 const mongoose = require("mongoose")
 const Product = require("./Routes/productRoute")
+const User = require("./Routes/userRoute")
+const Admin = require("./Routes/adminRoute")
+const cors = require("cors");
 
 const app = express();
-const PORT = 6000;
+const PORT = 8000;
+
+app.use(cors());
 
 
 app.use(express.urlencoded({ extended: true }));
@@ -15,7 +20,9 @@ mongoose.connect("mongodb://127.0.0.1:27017/shopnext")
         console.log("Error Occured", err);
     })
 
-app.use("/product", Product);
+app.use("/api/product", Product);
+app.use("/api/user", User);
+app.use("/api/admin", Admin);
 
 
 

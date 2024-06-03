@@ -4,21 +4,23 @@ import { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from "react-redux";
 import { storeProducts } from '../Store/productSlice';
 import FilterBar from '../Outlets/FilterBar';
+import axios from '../../axios';
 
 function Home() {
     const [products, setProducts] = useState([]);
     const dispatch = useDispatch();
     useEffect(() => {
-        fetch('https://dummyjson.com/products')
+        axios.get('/product')
             .then((response) => {
-                if (!response.ok) {
+                if (!response) {
                     throw new Error('Network response was not ok');
                 }
-                return response.json();
+                // return response.json();
+                return response.data
             })
             .then((result) => {
-                setProducts(result.products);
-                dispatch(storeProducts(result.products));
+                setProducts(result);
+                dispatch(storeProducts(result));
             })
             .catch((error) => {
                 console.error('Error fetching products:', error);
@@ -32,20 +34,20 @@ function Home() {
                     <div className="mx-auto max-w-2xl px-4 py-16 sm:px-6 sm:py-24 lg:max-w-7xl lg:px-8">
 
                         <div>
-                           <FilterBar  />
+                            <FilterBar />
                         </div>
 
                         <div className="mt-6 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-3 xl:gap-x-11">
                             {products.map((product) => (
-                                <Link to={`/product/${product.id}`}>
-                                    <div key={product.id} className="group relative">
+                                <Link key={product._id} to={`/product/${product._id}`}>
+                                    <div className="group relative">
                                         <div className="relative aspect-h-1 aspect-w-1 w-full rounded-md bg-gray-200 lg:aspect-none group-hover:opacity-75 lg:h-80">
                                             <img
                                                 src={product.thumbnail}
                                                 alt="thumbnail"
                                                 className="h-full w-full object-cover object-center lg:h-full lg:w-full"
                                             />
-                                            <div className='absolute top-3 left-[-10px] bg-blue-600 p-2 rounded-e-md'>{Math.floor(product.discountPercentage)}% discount</div>
+                                            <div className='absolute top-3 left-[-10px] text-white bg-blue-600 p-2 rounded-e-md'>{Math.floor(product.discountPercentage ? product.discountPercentage : 2)}% discount</div>
                                         </div>
                                         <div className="mt-4 flex justify-between">
                                             <div>

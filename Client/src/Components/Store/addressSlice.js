@@ -68,7 +68,6 @@ const addressSlice = createSlice({
             state.address.map((item) => {
                 const productId = id.payload.id;
                 if (item.id == productId) {
-                    // console.log(id, item.id);
                     item.isSelected = true;
                 } else {
                     item.isSelected = false;

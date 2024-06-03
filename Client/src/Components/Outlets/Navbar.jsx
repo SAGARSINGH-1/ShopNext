@@ -30,7 +30,6 @@ function Navbar() {
         setLoader(true);
         authService.getAccount().then((res) => {
             dispatch(login(res));
-            console.log("gee");
             setLoader(false);
         })
     };
@@ -41,21 +40,18 @@ function Navbar() {
 
     useEffect(() => {
         setCartItems(Items);
-        console.log("gee2");
     }, [Items]);
 
 
-    function logoutHandler() {
-        authService.logout().then((res) => {
-            dispatch(login(null));
-            navigate('/login');
+    async function logoutHandler() {
+        await authService.logout().then((res) => {
+            if (res) {
+                dispatch(login(null));
+                navigate('/login');
+            }
         });
     }
 
-
-
-    function moved() {
-    }
 
     function logoutHandler() {
         authService.logout().then((res) => {

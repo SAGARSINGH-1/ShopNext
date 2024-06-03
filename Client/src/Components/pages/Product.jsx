@@ -59,7 +59,6 @@ function Product() {
     // Add to Cart Handler to handle the product addition to the cart
     const AddtoCartHandler = (product) => {
         dispatch(storeProducts(product));
-        // console.log('Added to cart',product);
     };
 
     return (
