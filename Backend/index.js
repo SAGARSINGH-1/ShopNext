@@ -13,7 +13,7 @@ app.use(cors());
 
 app.use(express.urlencoded({ extended: true }));
 
-mongoose.connect("mongodb://127.0.0.1:27017/shopnext")
+mongoose.connect("mongodb+srv://marcusboy013:5tGscI6EeUmqLuCK@accounts.9komtum.mongodb.net/?retryWrites=true&w=majority&appName=accounts")
     .then(() => {
         console.log("MongoDB Connected Successfully");
     }).catch((err) => {
