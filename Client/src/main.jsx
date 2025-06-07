@@ -14,6 +14,7 @@ import Signup from './Components/pages/registration/Signup.jsx'
 import Account from './Components/pages/Account.jsx'
 import Orders from './Components/pages/Account/Orders.jsx'
 import Cart from './Components/pages/Account/Cart.jsx'
+import Profile from './Components/pages/Profile.jsx'
 
 const router = createBrowserRouter([
   {
@@ -27,6 +28,10 @@ const router = createBrowserRouter([
       {
         path: "/signup",
         element: <Signup />
+      },
+      {
+        path: "/profile",
+        element: <Profile />
       },
       {
         path: "/",

@@ -26,17 +26,6 @@ function Navbar() {
     const navigate = useNavigate();
     const [cartItems, setCartItems] = React.useState([]);
     const [loader, setLoader] = React.useState(false);
-    function getUser() {
-        setLoader(true);
-        authService.getAccount().then((res) => {
-            dispatch(login(res));
-            setLoader(false);
-        })
-    };
-
-    useEffect(() => {
-        getUser();
-    }, []);
 
     useEffect(() => {
         setCartItems(Items);

@@ -59,18 +59,18 @@ export class AuthService {
         } catch (error) {
             toast.error(error.message)
         }
-    
+
     }
 
-    async logout(){
-        try{
+    async logout() {
+        try {
             const response = await this.account.deleteSession('current');
-            if(response){
+            if (response) {
                 this.notify("Logout successful")
                 return response;
             }
         }
-        catch(error){
+        catch (error) {
             toast.error(error.message)
         }
     }

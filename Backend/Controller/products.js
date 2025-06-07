@@ -52,13 +52,14 @@ async function getProducts(req, res) {
             res.status(200).send(users)
         }
     } catch (error) {
-        res.status(400).json({ "error": error.message || "Some error occured" })
+        res.status(400).json({ "error": error.message || "Some error occurred" })
     }
 }
 async function getProductByID(req, res) {
     const id = req.params.id;
     try {
         const user = await Product.find({ _id: id });
+        console.log(user);
         if (user) {
             res.status(200).send(user)
         }

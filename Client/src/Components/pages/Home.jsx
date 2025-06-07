@@ -10,7 +10,7 @@ function Home() {
     const [products, setProducts] = useState([]);
     const dispatch = useDispatch();
     useEffect(() => {
-        axios.get('/product')
+        axios.get('http://localhost:2000/api/product')
             .then((response) => {
                 if (!response) {
                     throw new Error('Network response was not ok');

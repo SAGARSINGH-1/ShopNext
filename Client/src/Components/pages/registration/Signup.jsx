@@ -4,7 +4,7 @@ import authService from '../../../appwrite/auth';
 import toast from 'react-hot-toast';
 import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
-import { login } from '../../Store/authSlice'; // Update with the correct path to your login action
+import { login } from '../../Store/authSlice'; // Update with the correct path to your login action 
 
 function Signup() {
     const navigate = useNavigate();
@@ -12,34 +12,39 @@ function Signup() {
     const [user, setUser] = React.useState({ name: '', email: '', password: '', phone: '' });
     const [ID, setID] = React.useState('');
 
-    function handleSubmit(event) {
+    async function handleSubmit(event) {
         event.preventDefault();
         const data = new FormData(event.target);
         const name = data.get('name');
         const email = data.get('email');
         const password = data.get('password');
         const phone = data.get('phone');
-        setUser({ "name": name, "email": email, "password": password, "phone": phone });
-        authService.createAccount({ name, email, password, phone })
-            .then((response) => {
-                if (response) {
-                    setID(response.$id);
-                    console.log("Login", response);
-                    toast.success("Account created successfully");
 
-                    // Ensure that you have the correct 'login' action imported
-                    dispatch(login(response));
+        const user = { name, email, password, phone };
 
-                    // Use navigate function to redirect to "/profile"
-                    // navigate("/profile");
-                }
-
-            })
-            .catch((error) => {
-                // Display an error notification
-                toast.error("Error creating account. Please try again.", error);
+        try {
+            const res = await fetch("http://localhost:2000/api/user/create", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify(user),
             });
+
+            // Check if server responded OK
+            if (!res.ok) {
+                toast.error("Error creating user1: " + res.statusText.message); // Show error message
+            }
+
+            const resData = await res.json();   // <-- parse JSON normally if success
+            toast.success("Account created successfully!");
+            navigate('/login'); // Redirect to login page after successful signup
+        } catch (error) {
+            toast.error("Error creating user: " + error.message); // Show error message
+        }
     }
+
+
 
     return (
         <div className='pt-7 mx-4'>
@@ -83,7 +88,7 @@ function Signup() {
                                     Mobile Number
                                 </label>
                                 <div className="mt-2">
-                                    <input type="tel" id="phone" name="phone" pattern="[+]{1}[0-9]{11,14}" className='block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6' required />
+                                    <input type="tel" id="phone" name="phone" className='block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6' required />
                                 </div>
                             </div>
                             <div>

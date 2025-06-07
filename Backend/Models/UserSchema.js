@@ -1,10 +1,9 @@
 const mongoose = require("mongoose")
 
 const UserSchema = new mongoose.Schema({
-    username: {
+    name: {
         type: String,
         required: true,
-        unique: true
     },
     email: {
         type: String,
@@ -15,13 +14,19 @@ const UserSchema = new mongoose.Schema({
         type: String,
         required: true,
         minlength: 8,
-        maxlength: 50
     },
     role: {
         type: String,
         enum: ['user', 'admin'],
         required: true,
         default: 'user'
+    },
+    phone: {
+        type: String,
+        required: true,
+        unique: true,
+        minlength: 10,
+        maxlength: 10
     }
 })
 

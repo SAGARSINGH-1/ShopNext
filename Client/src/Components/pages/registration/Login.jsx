@@ -1,30 +1,49 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { Link, redirect } from 'react-router-dom'
 import { useDispatch } from 'react-redux'
 import { login } from '../../Store/authSlice'; // Update with the correct path to your login action
 import authService from '../../../appwrite/auth';
 import { useNavigate } from 'react-router-dom';
+import toast, { Toaster } from 'react-hot-toast';
 
 function Login() {
     const dispatch = useDispatch();
-    const Navigate = useNavigate();
+    const navigate = useNavigate();
     const [loader, setLoader] = React.useState(false);
 
-    function handleSubmit(event) {
+    async function handleSubmit(event) {
         event.preventDefault();
         setLoader(true);
         const data = new FormData(event.target);
         const email = data.get('email');
         const password = data.get('password');
 
-        authService.login({ email, password }).then((response) => {
-            if (response) {
-                authService.getAccount().then((res) => {
-                    dispatch(login(res));
-                    Navigate('/account/' + res.name);
-                })
+        const user = { email, password };
+
+        try {
+            const res = await fetch("http://localhost:2000/api/user/login", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                credentials: "include",
+                body: JSON.stringify(user),
+            });
+
+            // Check if server responded OK
+            if (!res.ok) {
+                toast.error("Invalid email or password"); // Show error message
+            } else {
+                const resData = await res.json();   // <-- parse JSON normally if success
+                navigate('/profile');
+                toast.success("Login successful!");
+                setLoader(false);
             }
-        })
+
+        } catch (error) {
+            console.log(error);
+
+        }
         setLoader(false);
     }
     return (
